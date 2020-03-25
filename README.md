@@ -3,6 +3,8 @@
 
 With recent events, home working and VPN access have became a priority for many IT organisations, the often forgotten about ASA has became a mission critical part of our IT infrastructure. The challenge however is how do we monitor these devices on an ongoing basis to look for trends in usage, peaks and spot any potential issues with dashboards like below.
 
+If you have any issues with this repo or anything included please raise an issue, this is intended to be a getting started guide so let us know whats missing or what doesn't work and we can make sure to update this document.
+
 ![](./images/dashboard-1.png)
 
 In this short lab guide we'll explore the process of collecting data that exists in the command line however is very difficult to collect and monitor on an ongoing basis much as we'd do with Model Driven Telemetry[Link to MDT lab]. In this example we will take CLI output from the firewall using pyATS and parse the output to create a standard JSON output. From this standard JSON output we can use open source data stacks such as TIG (Telegraf, InfluxDB and Grafana) to collect, store and visualise data from ASA devices.
@@ -141,5 +143,8 @@ Once that runs and the connection test is sucessful it's then time to upload the
 
 ![](./images/dashboard-import.gif)
 
+Feel free to play around with the queries to get the exact data you want to display, the templates were intended to give you a good start. Once you master Grafana you''ll be able to create your own visualisations. Most of the datafields can be found from the graphic below
 
-Feel free t
+![](./images/config-grafana.gif)
+
+If you have any issues with this repo or anything included please raise an issue, this is intended to be a getting started guide so let us know whats missing or what doesn't work and we can make sure to update this document.
