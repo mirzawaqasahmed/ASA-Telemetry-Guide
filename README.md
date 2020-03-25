@@ -15,7 +15,7 @@ Note: This lab uses beta parsers from the pyATS project, they have not been thro
 
 To run these exercises you will need an instance of an ASA. dCloud has an ASA instance configured for remote that you can reserve and use in this. We'll be using the "Cisco AnyConnect Posture with ASA, ISE, and AMP v1.2" demo. Alternatively you can also use your own ASA if you have one available. This has been tested against ASA Version 9.5(2)203.
 
-# Step 1 - Installing Docker
+## Step 1 - Installing Docker
 
 First off we'll need an environment with the TIG stack installed that we can use, for this guide I'll use a Docker container to automate much of this proccess. If you already have docker installed you can proceed to Step 2 and start to pull down the containers required. If you do not have docker installed you can consult the docker documentation here
 
