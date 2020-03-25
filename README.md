@@ -44,7 +44,7 @@ Now we're in use the following commands to install the necessary components and 
 ```
 apt-get update && apt-get upgrade
 apt-get install python3
-apt-get install python-pip
+apt-get install python-pip && apt-get install python3-venv
 apt-get install git
 apt-get install ssh
 pip install python-env
