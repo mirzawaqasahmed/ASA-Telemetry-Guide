@@ -125,4 +125,8 @@ Now we can get data from the ASA let's get our dashboard built. First off if the
 cp /opt/telegraf/ASA-Telemetry-Guide/telegraf/custom.conf /etc/telegraf/telegraf.d/custom.conf 
 ```
 
-When telegraf starts this will invoke our python script we tested in the last step and persist this output to our InfluxDB. You should have tested that the script will run in your environment before getting to this stage, if not, go back to step 2.
+When telegraf starts this will invoke our python script we tested in the last step and persist this output to our InfluxDB. You should have tested that the script will run in your environment before getting to this stage, if not go back to step 2 before doing this.
+
+All thats left to do now is start the telegraf service, or if it's already running stop and start again. This can be done on an ubuntu system with the command `service telegraf stop/start` like the graphic below
+
+![](./images/telegraf-config.gif)
