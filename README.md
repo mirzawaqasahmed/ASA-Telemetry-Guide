@@ -37,6 +37,8 @@ docker run -ti -p 3000:3000 -p 57500:57500 jeremycohoe/tig_mdt
 
 As this docker container wasn't fully build for what we're looking to do we need to do some further configuration to do this, from your shell use the command ```docker ps``` to display your container id. Take the containerid vaue which should be 12 digit alphanumeric string and then use the command ```docker exec -it <CONTAINER ID HERE> /bin/bash``` Once you do that you should have root prompt for your container.
 
+Note: I am using the TIG stack container from Jeremy Cohoe as I've mentioned. I am planing on rewriting parts of this lab with a fresh TIG stack install however for ease of use today we will be using Jeremy's container which I've also used in other labs.
+
 ![](./images/docker-exec.gif)
 
 Now we're in use the following commands to install the necessary components and packages, run these one after the other
@@ -72,11 +74,18 @@ pip install pyats[full]
 pip install genie.libs.parser --upgrade --pre
 pip install jsonmerge
 ```
-Once you've configured your environment all that is left to do is now test to see if things are working. Try running the following command from the shell which will test using our collection script 
+Once you've configured your environment all that is left to do is now test to see if things are working. Try running the following command from the shell which will test using our collection script. 
 
 ```
 /opt/telegraf/env3/bin/python /opt/telegraf/ASA-Telemetry-Guide/telegraf/scripts/asascript.py
 ```
+
+![](./images/run-command.gif)
+
+
+This command should run sucessfully and return a JSON output from your ASA as above, if it does not, have a look at some of the troubleshooting steps below.
+
+### Troubleshooting Steps
 
 You may get an error if the script runs that pyats has failed to bring the device into an any state. If this happens one of the possible causes is that the devices ssh keys it are offering are not accepted by the ssh daemon on ubuntu. I have had this on some older ASA models. To fix this add the lines below to the bottom of the /etc/ssh/ssh_config file in the container.
 
@@ -86,9 +95,6 @@ Ciphers 3des-cbc
 ```
 
 Another potential issue is that the testbed-asa.yaml file in the director telegraf/scripts directory is not accurate for your device, ensure credentials, IP and device names all match in the topology and your environment.
-
-
-Note: I am using the TIG stack container from Jeremy Cohoe as I've mentioned. I am planing on rewriting parts of this lab with a fresh TIG stack install however for ease of use today we will be using Jeremy's container which I've also used in other labs.
 
 ## Step 3 - Configure Telegraf and Build Dashboards
 
