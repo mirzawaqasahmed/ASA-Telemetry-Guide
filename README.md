@@ -47,7 +47,6 @@ apt-get install python3
 apt-get install python-pip && apt-get install python3-venv
 apt-get install git
 apt-get install ssh
-pip install python-env
 ```
 
 Now create some directories we'll use later
