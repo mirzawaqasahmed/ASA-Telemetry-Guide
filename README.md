@@ -3,7 +3,7 @@
 
 With recent events, home working and VPN access have became a priority for many IT organisations, the often forgotten about ASA has became a mission critical part of our IT infrastructure. The challenge however is how do we monitor these devices on an ongoing basis to look for trends in usage, peaks and spot any potential issues with dashboards like below.
 
-If you have any issues with this repo or anything included please raise an issue, this is intended to be a getting started guide so let us know whats missing or what doesn't work and we can make sure to update this document.
+If you have any issues with this repo or anything included please raise an issue, this is intended to be a getting started guide so let us know whats missing or what doesn't work and we can make sure to update this document. 
 
 ![](./images/dashboard-1.png)
 
