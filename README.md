@@ -76,7 +76,7 @@ pip install jsonmerge
 Once you've configured your environment all that is left to do is now test to see if things are working. Try running the following command from the shell which will test using our collection script 
 
 ```
-/opt/telegraf/telegraf/env3/bin/python /opt/telegraf/ASA-Telemetry-Guide/telegraf/scripts/asascript.py
+/opt/telegraf/env3/bin/python /opt/telegraf/ASA-Telemetry-Guide/telegraf/scripts/asascript.py
 ```
 
 You may get an error if the script runs that pyats has failed to bring the device into an any state. If this happens one of the possible causes is that the devices ssh keys it are offering are not accepted by the ssh daemon on ubuntu. I have had this on some older ASA models. To fix this add the lines below to the bottom of the /etc/ssh/ssh_config file in the container.
