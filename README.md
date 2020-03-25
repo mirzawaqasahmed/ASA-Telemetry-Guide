@@ -44,6 +44,7 @@ apt-get update && apt-get upgrade
 apt-get install python3
 apt-get install python-pip && python-env
 apt-get install git
+apt-get install ssh
 ```
 
 Now create some directories we'll use later
@@ -69,8 +70,25 @@ pip install pyats[full]
 pip install genie.libs.parser --upgrade --pre
 pip install jsonmerge
 ```
+Once you've configured your environment all that is left to do is now test to see if things are working. Try running the following command from the shell which will test using our collection script 
 
-Note: I am using the TIG stack container from Jeremy Cohoeas I've mentioned. I am planing on rewriting parts of this lab with a fresh TIG stack install however for ease of use today we will be using Jeremy's container which I've also used in other labs.
+```
+/opt/telegraf/telegraf/env3/bin/python /opt/telegraf/telegraf/scripts/asascript.py
+```
+
+You may get an error if the script runs that pyats has failed to bring the device into an any state. If this happens one of the possible causes is that the devices ssh keys it are offering are not accepted by the ssh daemon on ubuntu. I have had this on some older ASA models. To fix this add the lines below to the bottom of the /etc/ssh/ssh_config file in the container.
+
+```
+KexAlgorithms diffie-hellman-group1-sha1
+Ciphers 3des-cbc
+```
+
+Another potential issue is that the testbed-asa.yaml file in the director telegraf/scripts directory is not accurate for your device, ensure credentials, IP and device names all match in the topology and your environment.
+
+
+Note: I am using the TIG stack container from Jeremy Cohoe as I've mentioned. I am planing on rewriting parts of this lab with a fresh TIG stack install however for ease of use today we will be using Jeremy's container which I've also used in other labs.
+
+## Step 3 - Configure Telegraf and Build Dashboards
 
 
 
