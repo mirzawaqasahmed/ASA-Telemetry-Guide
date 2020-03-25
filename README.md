@@ -144,7 +144,7 @@ First thing you should do is configure a data source, you can do this by selecti
 
 ![](./images/configure-db.gif)
 
-Important: Make sure you name the database `InfluxDB-ASA`, as the pre-configured dashboard we're about to use will reference this source name. Ensure the InfluxDB database that's being referenced is also telegraf as shown in the graphic below.
+Important: Make sure you name the database `InfluxDB-asa`, as the pre-configured dashboard we're about to use will reference this source name. Ensure the InfluxDB database that's being referenced is also telegraf as shown in the graphic below.
 
 Once that runs and the connection test is successful it's then time to upload the .json file included in the Grafana directory of this repo, this should build the custom graphs we've built that will be populated with the data you are collecting from your own ASA environment.
 
