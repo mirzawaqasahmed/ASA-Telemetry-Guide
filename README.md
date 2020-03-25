@@ -133,13 +133,13 @@ All thats left to do now is start the telegraf service, or if it's already runni
 
 By now we should have some data in our InfluxDB to display, to configure our dashboards login to Grafana which should be already running on your system and login (if you're using the container above the username/password is admin/Cisco123). First thing you should do is configure a datasource, you can do this by selecting
 
-![](configure-db.gif)
+![](./images/configure-db.gif)
 
 Important: Make sure you name the database InfluxDB-ASA, as the preconfigured dashboard we're about to use will reference this source name. Ensure the InfluxDB database that's being referenced is also telegraf as shown in the graphic below.
 
 Once that runs and the connection test is sucessful it's then time to upload the .json file included in the grafana directory of this repo, this should build the custom graphs we've built that will be populated with the data you are collecting from your own ASA environment. To do this hover over the grey '+' on the left hand taskbar and select Dashboard, from there select New dashboard from the top of the screen and Import dashboard from the next screen. You should then be promtped to upload your json file which can be found in this repo.
 
-![](dashboard-import.gif)
+![](./images/dashboard-import.gif)
 
 
 Feel free t
