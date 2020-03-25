@@ -2,7 +2,7 @@ from genie.testbed import load
 import json
 from jsonmerge import merge
 
-tb = load('/opt/telegraf/telegraf/testbed-asa.yaml')
+tb = load('/opt/telegraf/ASA-Telemetry-Guide/telegraf/testbed-asa.yaml')
 dev = tb.devices['ASAv']
 dev.connect(log_stdout=False)
 dev.connect()
