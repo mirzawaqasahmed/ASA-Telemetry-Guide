@@ -37,6 +37,8 @@ docker run -ti -p 3000:3000 -p 57500:57500 jeremycohoe/tig_mdt
 
 As this docker container wasn't fully build for what we're looking to do we need to do some further configuration to do this, from your shell use the command ```docker ps``` to display your container id. Take the containerid vaue which should be 12 digit alphanumeric string and then use the command ```docker exec -it <CONTAINER ID HERE> /bin/bash``` Once you do that you should have root prompt for your container.
 
+![](./images/docker-exec.gif)
+
 Now we're in use the following commands to install the necessary components and packages, run these one after the other
 
 ```
