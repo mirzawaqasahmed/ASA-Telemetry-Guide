@@ -1,0 +1,24 @@
+testbed:
+  name: pyats
+
+  tacacs:
+    username: admin
+  passwords:
+    tacacs: C1sco12345
+    enable: C1sco12345
+    line: C1sco12345
+
+devices:
+  ASAv:
+    alias: ASAv
+    os: asa
+    type: ASAv
+    connections:
+      defaults:
+        class: unicon.Unicon
+      console:
+        ip: "198.18.133.254"
+        protocol: ssh
+    custom:
+      abstraction:
+        order: [os, type]
