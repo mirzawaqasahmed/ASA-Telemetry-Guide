@@ -61,13 +61,16 @@ python3 -mvenv env3
 source env3/bin/activate
 ```
 
-Finally install the Python package requirements too with the pip command
+Finally install the Python package requirements too with the pip command.
 
-```pip install -U pip
-pip install -r scripts/requirements.txt
+```
+pip install -U pip
+pip install pyats[full]
+pip install genie.libs.parser --upgrade --pre
+pip install jsonmerge
 ```
 
-```Note: I am using the TIG stack container from Jeremy Cohoe, I am planing on rewriting parts of this lab with a fresh TIG stack install however for ease of use today we will be using Jeremy's container which I've also used in other labs.
+```Note: I am using the TIG stack container from Jeremy Cohoeas I've mentioned. I am planing on rewriting parts of this lab with a fresh TIG stack install however for ease of use today we will be using Jeremy's container which I've also used in other labs.
 ```
 
 
