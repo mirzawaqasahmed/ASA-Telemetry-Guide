@@ -85,6 +85,27 @@ Once you've configured your environment all that is left to do is now test to se
 
 This command should run sucessfully and return a JSON output from your ASA as above, if it does not, have a look at some of the troubleshooting steps below.
 
+Have a look at the python script asascript.py included in this repo which you can see below. It's actually incredibly simple and is just logging into our ASAv in our testbed, and issuing two commands 'show resource usage' and 'show vpn-sessiondb') The pyATS libraries are doing the rest and converting this into simple JSON and outputing to the console. Which we will now use telegraf for in the next stage to get this into our DB and visualise in Grafana.
+
+```
+from genie.testbed import load
+import json
+from jsonmerge import merge
+
+tb = load('/opt/telegraf/ASA-Telemetry-Guide/telegraf/scripts/testbed-asa.yaml')
+dev = tb.devices['ASAv']
+dev.connect(log_stdout=False)
+dev.connect()
+
+
+p1 = dev.parse('show vpn-sessiondb')
+p2 = dev.parse('show resource usage')
+
+p3 = merge(p1,p2)
+
+print(json.dumps(p3))
+```
+
 ### Troubleshooting Steps
 
 You may get an error if the script runs that pyats has failed to bring the device into an any state. If this happens one of the possible causes is that the devices ssh keys it are offering are not accepted by the ssh daemon on ubuntu. I have had this on some older ASA models. To fix this add the lines below to the bottom of the /etc/ssh/ssh_config file in the container.
