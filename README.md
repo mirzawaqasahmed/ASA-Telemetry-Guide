@@ -119,8 +119,10 @@ Another potential issue is that the testbed-asa.yaml file in the director telegr
 
 ## Step 3 - Configure Telegraf and Build Dashboards
 
-Now we can get data from the ASA lets start to do some interesting things with it. First off if the directory /etc/telegraf/telegraf.d doesn't already exist create it, and copy the custom.conf file in the telegraf folder over to /etc/telegraf/telegraf.d/custom.conf 
+Now we can get data from the ASA let's get our dashboard built. First off if the directory /etc/telegraf/telegraf.d doesn't already exist create it, and copy the custom.conf file in the telegraf folder over to /etc/telegraf/telegraf.d/custom.conf 
+
 ```
 cp /opt/telegraf/ASA-Telemetry-Guide/telegraf/custom.conf /etc/telegraf/telegraf.d/custom.conf 
 ```
+
 When telegraf starts this will invoke our python script we tested in the last step and persist this output to our InfluxDB. You should have tested that the script will run in your environment before getting to this stage, if not, go back to step 2.
